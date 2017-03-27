@@ -20,9 +20,9 @@ of the robots will start move towards the WSN partition
 it is serving.
 
 ## Authors
-[Pedro Carmelo](pedro.carmelo@tecnico.ulisboa.pt)
+[Pedro Carmelo](pedro.carmelo@tecnico.ulisboa.pt "pedro.carmelo@tecnico.ulisboa.pt")
 
-[Lénio Passos](lenio.passos@tecnico.ulisboa.pt)
+[Lénio Passos](lenio.passos@tecnico.ulisboa.pt "lenio.passos@tecnico.ulisboa.pt")
 ## Hardware
 Partitioned Sensor Network Nodes: 2 or more motes 
 
