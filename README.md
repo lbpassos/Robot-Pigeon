@@ -35,10 +35,21 @@ The project will be developed in three stages:
 3. Setup the 3PI+mbed robot to interact with the **WSN**
 
 ## Sequence Diagram
+We expect to have:
+
+1. Two threads in the transmission node (one for the serial communication and the other for the TRX)
+2. Two threads in the robot (one for the movement and the other to handle the TRX/TRX)
+3. One thread in the reception node.
+
+In order to guarantee concurrency the threads interact to each other through messages described in following Sequence Diagram
 [Sequence Diagram in UML](/seq_diagram/seq_diagram.pdf)
 
 ## Planning
-[Development Phases](/gantt/robicch-jQueryGantt-86e2144/gantt.html)
+[Development Phases](https://rawgit.com/lbpassos/Robot-Pigeon/master/gantt/robicch-jQueryGantt-86e2144/gantt.html)
+
+*Please Note: Use Chrome and enable scripts.* 
+
+The Gantt chart was built based on the work of [robicch](https://github.com/robicch/jQueryGantt). Changes were made in the Javascript code in the file [gantt.html](/gantt/robicch-jQueryGantt-86e2144/gantt.html) in order to configure and properly run in Markdown.
 
 ## Progress Status
 27-03-2017 - Choosing which mote to use for the **WSN** nodes
