@@ -33,5 +33,12 @@ The project will be developed in three stages:
 1. Setting the **WSN** using ISTmotes or micaZ's
 2. Splitting the WSN in two so that one part can no longer communicate with the other
 3. Setup the 3PI+mbed robot to interact with the **WSN**
+
+## Sequence Diagram
+[Sequence Diagram in UML](/seq_diagram/seq_diagram.pdf)
+
+## Planning
+[Development Phases](/gantt/robicch-jQueryGantt-86e2144/gantt.html)
+
 ## Progress Status
 27-03-2017 - Choosing which mote to use for the **WSN** nodes
