@@ -274,14 +274,38 @@ function getFile() {
 
 function loadFromLocalStorage() {
   var ret;
-  if (localStorage) {
+  /*if (localStorage) {
     if (localStorage.getObject("teamworkGantDemo")) {
       ret = localStorage.getObject("teamworkGantDemo");
     }
-  }
+  }*/
+
+  // Code created by lbpassos
+  /* Locally execute */
+  /* In the console run:
+        function download(text, name, type) {
+	    var a = document.createElement("a");
+        
+    var file = new Blob([text], {type: type});
+        
+    a.href = URL.createObjectURL(file);
+        
+    a.download = name;
+    
+            a.click();
+        
+}
+        var tmp = ge.saveProject();
+        var jsonData = JSON.stringify(tmp);
+        download(jsonData, 'test.txt', 'text/plain');
+   */
+   /* The contents of test.txt must be place in the ret variable compile and upload to github */ 
+
+  ret = {"tasks":[{"id":-1,"name":"Robot Pigeon","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":0,"status":"STATUS_ACTIVE","depends":"","canWrite":true,"start":1490569200000,"duration":51,"end":1496703599999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":true},{"id":"tmp_fk1491833583552_1","name":"System Study and Modelling","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":1,"status":"STATUS_ACTIVE","depends":"","canWrite":true,"start":1490569200000,"duration":11,"end":1491865199999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":false},{"id":"tmp_fk1491833714736_1","name":"Operative System Study and Implementation","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":1,"status":"STATUS_ACTIVE","depends":"","canWrite":true,"start":1491865200000,"duration":40,"end":1496703599999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":true},{"id":"tmp_fk1491833904676_1","name":"Coding","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":2,"status":"STATUS_ACTIVE","depends":"","canWrite":true,"start":1491951600000,"duration":20,"end":1494370799999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":true},{"id":"tmp_fk1491833959773_1","name":"Contiki (Mote TX)","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":3,"status":"STATUS_ACTIVE","depends":"","canWrite":true,"start":1491951600000,"duration":4,"end":1492469999999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":false},{"id":"tmp_fk1491833985846_1","name":"FreeRtos (Robot)","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":3,"status":"STATUS_SUSPENDED","depends":"5","canWrite":true,"start":1492470000000,"duration":10,"end":1493679599999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":false},{"id":"tmp_fk1491833972561_1","name":"TinyOs (Mote RX)","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":3,"status":"STATUS_SUSPENDED","depends":"6","canWrite":true,"start":1493679600000,"duration":6,"end":1494370799999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":false},{"id":"tmp_fk1491834152761_1","name":"Integration, Testing, Debug","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":2,"status":"STATUS_SUSPENDED","depends":"7","canWrite":true,"start":1494370800000,"duration":19,"end":1496703599999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":false},{"id":"tmp_fk1491834177359_1","name":"Final Report","progress":0,"progressByWorklog":false,"relevance":0,"type":"","typeId":"","description":"","code":"","level":1,"status":"STATUS_ACTIVE","depends":"","canWrite":true,"start":1495580400000,"duration":9,"end":1496703599999,"startIsMilestone":false,"endIsMilestone":false,"collapsed":false,"assigs":[],"hasChild":false}],"deletedTaskIds":[],"resources":[{"id":"tmp_1","name":"Resource 1"},{"id":"tmp_2","name":"Resource 2"},{"id":"tmp_3","name":"Resource 3"},{"id":"tmp_4","name":"Resource 4"}],"roles":[{"id":"tmp_1","name":"Project Manager"},{"id":"tmp_2","name":"Worker"},{"id":"tmp_3","name":"Stakeholder"},{"id":"tmp_4","name":"Customer"}],"canWrite":true,"canWriteOnParent":true,"zoom":"w3"}
+      
 
   //if not found create a new example task
-  if (!ret || !ret.tasks || ret.tasks.length == 0){
+  /*if (!ret || !ret.tasks || ret.tasks.length == 0){
     ret= {"tasks":    [
       {"id": -1, "name": "Gantt editor", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 0, "status": "STATUS_ACTIVE", "depends": "", "canWrite": true, "start": 1396994400000, "duration": 20, "end": 1399586399999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": true},
       {"id": -2, "name": "coding", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 1, "status": "STATUS_ACTIVE", "depends": "", "canWrite": true, "start": 1396994400000, "duration": 10, "end": 1398203999999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": true},
@@ -304,16 +328,19 @@ function loadFromLocalStorage() {
       {"id": "tmp_3", "name": "Stakeholder"},
       {"id": "tmp_4", "name": "Customer"}
     ], "canWrite":    true, "canWriteOnParent": true, "zoom": "w3"}
-
+*/
+    
 
     //actualize data
     var offset=new Date().getTime()-ret.tasks[0].start;
     for (var i=0;i<ret.tasks.length;i++) {
       ret.tasks[i].start = ret.tasks[i].start + offset;
     }
-  }
+  //}
   return ret;
 }
+
+
 
 
 function saveInLocalStorage() {
