@@ -1,4 +1,4 @@
-# Robot-Pigeon
+﻿# Robot-Pigeon
 ## Description
 In automated warehouses, for instance, robots are
 responsible for storing and fetching goods, among other
@@ -53,3 +53,5 @@ The Gantt chart was built based on the work of [robicch](https://github.com/robi
 
 ## Progress Status
 27-03-2017 - Choosing which mote to use for the **WSN** nodes
+
+12-04-2017 - Work started on Contiki OS \( Deployment on the moteist++s5 1011 based on a MSP430F5438A\) 
