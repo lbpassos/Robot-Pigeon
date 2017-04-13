@@ -45,7 +45,7 @@ In order to guarantee concurrency the threads interact to each other through mes
 [Sequence Diagram in UML](/seq_diagram/seq_diagram.pdf)
 
 ## Planning
-[Development Phases](https://rawgit.com/lbpassos/Robot-Pigeon/master/gantt/robicch-jQueryGantt-86e2144/gantt.html)
+[Development Phases](https://rawgit.com/lbpassos/Robot-Pigeon/master/gantt/robicch-jQueryGantt-86e2144/gantt.jsp)
 
 *Please Note: Use Chrome and enable scripts.* 
 
