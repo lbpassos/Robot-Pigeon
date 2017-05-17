@@ -1,0 +1,57 @@
+CONTIKI_TARGET_SOURCEFILES += contiki-moteist5-platform.c \
+	radio-sensor.c
+
+ARCH=spix.c i2c.c activeswitch.c node-id.c sensors.c cfs-coffee.c \
+     watchdog.c msp430.c slip.c \
+     cc2420.c cc2420-arch.c cc2420-arch-sfd.c \
+     uip-ipchksum.c \
+     uart0.c slip_uart0.c uart0-putchar.c
+
+
+
+CLEAN += symbols.c symbols.h
+
+CONTIKI_TARGET_DIRS = . dev apps net
+ifndef CONTIKI_TARGET_MAIN
+CONTIKI_TARGET_MAIN = contiki-moteist5-main.c
+endif
+
+ifdef IAR
+CFLAGS+=-e --vla -Ohz --multiplier=32 --multiplier_location=4C0 --hw_workaround=CPU40 --core=430X  --data_model small --double=32 -D__MSP430F5438A__=1
+endif
+
+CONTIKI_TARGET_SOURCEFILES += $(ARCH) $(UIPDRIVERS)
+
+ifdef IAR
+MCU=msp430f5438a
+else
+MCU=msp430f5438a
+endif
+
+# Platform has a MSP430X MCU with 20-bit support
+CPU_HAS_MSP430X=1
+
+include $(CONTIKI)/cpu/msp430/Makefile.msp430
+
+ifdef IAR
+LDFLAGSNO += -xm "$(IAR_PATH)/lib/dlib/dl430xsfn.r43" -f "$(IAR_PATH)/config/lnk430f5438.xcl"
+LDFLAGS += $(LDFLAGSNO) -Felf -yn
+endif
+
+contiki-$(TARGET).a: ${addprefix $(OBJECTDIR)/,symbols.o}
+#	$(AR) rcf $@ $^
+
+%.hex: %.ihex
+	mv $< $@
+
+%.upload: %.hex
+	/home/user/MSPFlasher_1.3.10/MSP430Flasher -n msp430F5438A -e ERASE_MAIN -w $< -v -z [VCC]
+	
+%.upload-clean: %.hex   
+	/home/user/MSPFlasher_1.3.10/MSP430Flasher -n msp430F5438A -w $< -v -z [VCC]
+
+MODULES += core/net core/net/mac \
+           core/net/mac/contikimac \
+           core/net/llsec \
+	   core/net \
+           dev/cc2420
