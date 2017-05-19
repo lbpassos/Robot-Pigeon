@@ -1,9 +1,5 @@
-CONTIKI_PROJECT = robotPigeon-shell
+CONTIKI_PROJECT = serial
 all: $(CONTIKI_PROJECT)
 
-APPS = serial-shell
 CONTIKI = ../../..
-
 include $(CONTIKI)/Makefile.include
-
-
