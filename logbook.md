@@ -1,6 +1,8 @@
 ﻿# Robot-Pigeon
 ## Logbook
 
+>**22-05-2017** - Robot (Pololu) movements finished with success.
+
 >**19-05-2017** - Another aproach to the Serial line problem taken: The use of the Contiki shell. The solution runs OK in 
 native Contiki environment but fails when uploaded to moteist5 with the same previous symptoms:  the event **serial_line_event_message** 
 is not triggered. Work started in the robot.
