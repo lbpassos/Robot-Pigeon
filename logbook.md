@@ -1,6 +1,8 @@
 ﻿# Robot-Pigeon
 ## Logbook
 
+>**27-05-2017** - Serial Interrupt working. All serial interface finished with success.
+
 >**22-05-2017** - Robot (Pololu) movements finished with success.
 
 >**19-05-2017** - Another aproach to the Serial line problem taken: The use of the Contiki shell. The solution runs OK in 
