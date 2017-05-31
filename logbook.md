@@ -1,6 +1,9 @@
 ﻿# Robot-Pigeon
 ## Logbook
 
+>**31-05-2017** - Communication between the two Contiki nodes Successful. Tests with unicast and broadcast both using the 
+Rime stack. Work started on xbee.
+
 >**27-05-2017** - Serial Interrupt working. All serial interface finished with success.
 
 >**22-05-2017** - Robot (Pololu) movements finished with success.
