@@ -1,6 +1,9 @@
 ﻿# Robot-Pigeon
 ## Logbook
 
+>**3-06-2017** - Communication module completed. mote to Xbee and xbee to mote.
+Rime stack. All system integration started.
+
 >**31-05-2017** - Communication between the two Contiki nodes Successful. Tests with unicast and broadcast both using the 
 Rime stack. Work started on xbee.
 
