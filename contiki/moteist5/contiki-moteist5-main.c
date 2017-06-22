@@ -52,7 +52,9 @@
 
 #include "sys/node-id.h"
 
-#include "robotPigeon-shell.h"  // ---------------- ACTIVAR para o mote serial
+/* ACTIVAR para o mote serial */
+/* --------------------------- */
+#include "robotPigeon-shell.h"
 
 // #include "lcd.h"
 //#include "duty-cycle-scroller.h"
@@ -164,8 +166,10 @@ main(int argc, char **argv)
   flash_done();
 #endif /* BURN_NODEID */
 #endif /* NODE_ID */
-
-  if(node_id == 0) { // ------------------------ Alterar de acordo com o destino --------
+  
+   /* Alterar de acordo com o destino */
+  /* -------------------------------- */ 
+  if(node_id == 0) { 
     //node_id = *((unsigned short *)0x1800);
 	node_id = 1;//No mote com a porta serie
 	//node_id = 2;//2;// outro mote
@@ -277,6 +281,8 @@ main(int argc, char **argv)
          CC2420_CONF_CHANNEL);
 #endif /* NETSTACK_CONF_WITH_IPV6 */
 
+/* Comentar no mote com a porta serie */
+/* -------------------------------- */
 //#if !NETSTACK_CONF_WITH_IPV6 
         //uart0_set_input(serial_line_input_byte); //Desactivar
 	//printf("\nSem IPV6\n");	

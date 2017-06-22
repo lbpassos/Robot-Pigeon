@@ -1,6 +1,6 @@
 /**
  * \file
- *         Tmote Sky-specific My Contiki shell 
+ *         Robot Pigeon
  *         Base code reference: sky-shell.c
  * \author
  *         
