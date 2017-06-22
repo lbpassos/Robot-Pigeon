@@ -128,7 +128,7 @@ void Robot_Tasks_init();
 
 void Mode_Task(void * pvParameters);
 
-void follow_line();
+int follow_line();
 
 void follow_line_sensor_init();
 

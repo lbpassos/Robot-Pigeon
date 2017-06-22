@@ -40,6 +40,7 @@
 #include "dev/serial-line.h"
 #include "dev/slip.h"
 #include "dev/uart0.h"
+#include "dev/uart1.h"
 #include "dev/watchdog.h"
 #include "dev/xmem.h"
 #include "lib/random.h"
@@ -50,12 +51,12 @@
 #include "sys/autostart.h"
 
 #include "sys/node-id.h"
+
+#include "robotPigeon-shell.h"  // ---------------- ACTIVAR para o mote serial
+
 // #include "lcd.h"
 //#include "duty-cycle-scroller.h"
 
-/* ---------------------- ALTERACAO ------------- APAGAR*/
-#undef NETSTACK_CONF_WITH_IPV6
-#define NETSTACK_CONF_WITH_IPV6 0     
 
 #if NETSTACK_CONF_WITH_IPV6
 #include "net/ipv6/uip-ds6.h"
@@ -73,10 +74,10 @@
 extern unsigned char node_mac[8];
 
 //MEU ------------
-static int serial_input_byte(unsigned char c) { 
-	printf("got input byte: %d ('%c')\n", c, c); 
+/*static int serial_input_byte(unsigned char c) { 
+	printf("got input byte: %d ('%c')\r\n", c, c); 
 	return 1;
-}
+}*/
 
 //SENSORS(&button_sensor);
 /*---------------------------------------------------------------------------*/
@@ -131,7 +132,8 @@ main(int argc, char **argv)
 
   leds_on(LEDS_RED);
 
-  uart0_init(BAUD2UBR(115200)); /* Must come before first printf */
+  //uart0_init(BAUD2UBR(115200)); /* Must come before first printf */
+  uart0_init(BAUD2UBR(2400)); 
 #if NETSTACK_CONF_WITH_IPV4
   slip_arch_init(BAUD2UBR(115200));
 #endif /* NETSTACK_CONF_WITH_IPV4 */
@@ -163,8 +165,11 @@ main(int argc, char **argv)
 #endif /* BURN_NODEID */
 #endif /* NODE_ID */
 
-  if(node_id == 0) {
-    node_id = *((unsigned short *)0x1800);
+  if(node_id == 0) { // ------------------------ Alterar de acordo com o destino --------
+    //node_id = *((unsigned short *)0x1800);
+	node_id = 1;//No mote com a porta serie
+	//node_id = 2;//2;// outro mote
+        
   }
   memset(node_mac, 0, sizeof(node_mac));
   node_mac[6] = node_id >> 8;
@@ -272,12 +277,12 @@ main(int argc, char **argv)
          CC2420_CONF_CHANNEL);
 #endif /* NETSTACK_CONF_WITH_IPV6 */
 
-#if !NETSTACK_CONF_WITH_IPV6 
-        //uart0_set_input(serial_line_input_byte);
-	printf("\nSem IPV6\n");	
-	uart0_set_input(serial_input_byte);  
+//#if !NETSTACK_CONF_WITH_IPV6 
+        //uart0_set_input(serial_line_input_byte); //Desactivar
+	//printf("\nSem IPV6\n");	
+	uart0_set_input(serial_input_byte);  //Activar para o mote serie
 	serial_line_init();
-#endif
+//#endif
 
 #if TIMESYNCH_CONF_ENABLED
   timesynch_init();

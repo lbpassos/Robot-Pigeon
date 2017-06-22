@@ -1,6 +1,9 @@
 ﻿# Robot-Pigeon
 ## Logbook
 
+>**22-06-2017** - Project Completed. Changes were made in the final System Modelling in comparison
+with the one designed 10-04-2017. System integration finished.
+
 >**3-06-2017** - Communication module completed. mote to Xbee and xbee to mote.
 Rime stack. All system integration started.
 

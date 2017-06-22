@@ -146,23 +146,23 @@ void invertDirection(){
 
 
 
-void follow_line(){
+int follow_line(){
 
     updatesensors();
     direction_Next = directionCalc(lineColor, direction_Prev);
     
     if( direction_Next==Repeat ){
         m3pi.stop();
-        wait(10);
+        wait(5);
         invertDirection();
-        wait(10);
-        return;
+        //wait(10);
+        return 1;
     }
     
     m3pi.right_motor(follow_line_speed*right_motor_hashTable[direction_Next]);
     m3pi.left_motor(follow_line_speed*left_motor_hashTable[direction_Next]);
     direction_Prev = direction_Next;
-    
+    return 0;
 }     
     
  
