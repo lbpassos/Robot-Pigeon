@@ -24,7 +24,7 @@ it is serving.
 
 [Lénio Passos](lenio.passos@tecnico.ulisboa.pt "lenio.passos@tecnico.ulisboa.pt")
 ## Hardware
-Partitioned Sensor Network Nodes: 2 or more motes 
+Partitioned Sensor Network Nodes: 2 motes (moteist5++) 
 
 Robots: 2x 3PI+mbed platform
 ## Development Stages
@@ -38,7 +38,7 @@ The project will be developed in three stages:
 We expect to have:
 
 1. Two threads in the transmission node (one for the serial communication and the other for the TRX)
-2. Two threads in the robot (one for the movement and the other to handle the TRX/TRX)
+2. One thread in the robot (handle bothe movement and TRX/TRX)
 3. One thread in the reception node.
 
 In order to guarantee concurrency the threads interact to each other through messages described in the following Sequence Diagram
