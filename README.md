@@ -48,6 +48,8 @@ In order to guarantee concurrency the threads interact to each other through mes
 Expected 
 [Development Phases](https://gantt.twproject.com:443/project/1X9-150909F55DB75F812A38D3DC79EC746290AEFCA972CD7598750899819941F094)
 
-
 ## Progress Status
 [logbook](logbook.md)
+
+## Video
+Please check the [Proof Of Concept](/video/IMG_1166.MOV) video
