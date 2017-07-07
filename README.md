@@ -52,4 +52,4 @@ Expected
 [logbook](logbook.md)
 
 ## Video
-Please check the [Proof Of Concept](/video/IMG_1166.MOV) video
+Please check the [Proof Of Concept](https://youtu.be/qw-E1PUByb0) video
